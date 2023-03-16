@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Game : MonoBehaviour
 {
@@ -105,5 +106,15 @@ public class Game : MonoBehaviour
 
             SceneManager.LoadScene("Game");
         }    
+    }
+
+    public void Winner(string playerWinner)
+    {
+        gameOver = true;
+
+        GameObject.FindGameObjectWithTag("WinnerText").GetComponent<Text>().enabled = true;
+        GameObject.FindGameObjectWithTag("WinnerText").GetComponent<Text>().text = playerWinner + " is the winner!";
+
+        GameObject.FindGameObjectWithTag("RestartText").GetComponent<Text>().enabled = true;
     }
 }
