@@ -43,6 +43,8 @@ public class MovePlate : MonoBehaviour
 
         controller.GetComponent<Game>().SetPosition(referece);
 
+        controller.GetComponent<Game>().NextTurn();
+
         referece.GetComponent<Chessman>().DestroyMovePlates();
     }
 
