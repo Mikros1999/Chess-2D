@@ -189,7 +189,7 @@ public class Chessman : MonoBehaviour
         {
             GameObject cp = sc.GetPosition(x, y);
 
-            if (cp != null)
+            if (cp == null)
             {
                 MovePlateSpawn(x, y);
             } else if (cp.GetComponent<Chessman>().playerColor != playerColor)
@@ -205,7 +205,7 @@ public class Chessman : MonoBehaviour
 
         if (sc.PositionOnBoard(x, y))
         {
-            if (sc.GetPosition(x,y) != null)
+            if (sc.GetPosition(x,y) == null)
             {
                 MovePlateSpawn(x, y);
             }
