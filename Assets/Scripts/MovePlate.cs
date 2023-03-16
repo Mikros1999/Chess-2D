@@ -31,6 +31,9 @@ public class MovePlate : MonoBehaviour
         {
             GameObject cp = controller.GetComponent<Game>().GetPosition(matrixX, matrixY);
 
+            if (cp.name == "king_white") controller.GetComponent<Game>().Winner("Black");
+            if (cp.name == "king_black") controller.GetComponent<Game>().Winner("White");
+
             Destroy(cp);
         }
 
